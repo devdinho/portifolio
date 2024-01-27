@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+}
+  
+.lightning {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 360px;
+    height: 156px;
+    /* transform: rotate(-90deg); */
+    opacity: 0;
+    animation: lightning 4s linear infinite;
+
+    background: url("../IMG/lightning.png");
+    background-position: left;
+  }
+  
+  
+  @keyframes flash {
+    0% {
+      opacity: 0;
+    }
+    10% {
+      opacity: 0;
+    }
+    12% {
+      opacity: 0.3;
+    }
+    14% {
+      opacity: 0;
+    }
+    20% {
+      opacity: 0;
+    }
+    22% {
+      opacity: 0.6;
+    }
+    26% {
+      opacity: 0;
+    }
+  }
+  
+  @keyframes lightning {
+    0% {
+      width: 0px;
+      height: 156px;
+    }
+    50% {
+      opacity: 1;
+      width: 360px;
+      height: 156px;
+    }
+  }
