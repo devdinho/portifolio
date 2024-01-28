@@ -7,50 +7,85 @@
     top: 0;
     left: 0;
     right: 0;
-    margin: auto;
+    margin-left: 0;
     width: 360px;
     height: 156px;
     /* transform: rotate(-90deg); */
     opacity: 0;
-    animation: lightning 4s linear infinite;
-
+    animation: lightning 1s linear infinite;
+    
     background: url("../IMG/lightning.png");
     background-position: left;
   }
   
   
-  @keyframes flash {
-    0% {
-      opacity: 0;
-    }
-    10% {
-      opacity: 0;
-    }
-    12% {
-      opacity: 0.3;
-    }
-    14% {
-      opacity: 0;
-    }
-    20% {
-      opacity: 0;
-    }
-    22% {
-      opacity: 0.6;
-    }
-    26% {
-      opacity: 0;
-    }
+@keyframes flash {
+  0% {
+    opacity: 0;
   }
+  10% {
+    opacity: 0;
+  }
+  12% {
+    opacity: 0.3;
+  }
+  14% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+  }
+  22% {
+    opacity: 0.6;
+  }
+  26% {
+    opacity: 0;
+  }
+}
   
-  @keyframes lightning {
+@keyframes lightning {
     0% {
-      width: 0px;
-      height: 156px;
+        width: 0px;
+        height: 156px;
+    }
+    5% {
+        opacity: 0.2;
+        width: 18px; /* 5% de 360px */
+        height: 156px;
+    }
+    15% {
+        opacity: 0.3;
+        width: 72px; /* 20% de 360px */
+        height: 156px;
+    }
+    25% {
+        opacity: 0.5;
+        width: 144px; /* 40% de 360px */
+        height: 156px;
+    }
+    35% {
+        opacity: 0.6;
+        width: 252px; /* 70% de 360px */
+        height: 156px;
+    }
+    45% {
+        opacity: 0.7;
+        width: 360px; /* 100% de 360px */
+        height: 156px;
     }
     50% {
-      opacity: 1;
-      width: 360px;
+        opacity: 0.7;
+        width: 360px; /* 100% de 360px */
+        height: 156px;
+    }
+    99% {
+      opacity: 0.7;
+      width: 360px; /* 100% de 360px */
       height: 156px;
     }
+    100% {
+      opacity: 0;
+      width: 0px;
+      height: 156px;
   }
+}
