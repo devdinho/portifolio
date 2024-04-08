@@ -50,42 +50,42 @@
   }
   5% {
       opacity: 0.1;
-      width: 72px; /* 5% de 1440px */
-      height: 624px; /* 5% de 624px */
+      width: 72px;
+      height: 624px;
   }
   15% {
       opacity: 0.2;
-      width: 288px; /* 20% de 1440px */
-      height: 624px; /* 20% de 624px */
+      width: 288px;
+      height: 624px;
   }
   25% {
       opacity: 0.3;
-      width: 576px; /* 40% de 1440px */
-      height: 624px; /* 40% de 624px */
+      width: 576px;
+      height: 624px;
   }
   35% {
       opacity: 0.5;
-      width: 1008px; /* 70% de 1440px */
-      height: 624px; /* 70% de 624px */
+      width: 1008px;
+      height: 624px;
   }
   45% {
       opacity: 0.6;
-      width: 1440px; /* 100% de 1440px */
-      height: 624px /* 100% de 624px */
+      width: 1440px;
+      height: 624px;
   }
   50% {
       opacity: 0.6;
-      width: 1440px; /* 100% de 1440px */
-      height: 624px /* 100% de 624px */
+      width: 1440px;
+      height: 624px;
   }
   99% {
       opacity: 0.6;
-      width: 1440px; /* 100% de 1440px */
-      height: 624px /* 100% de 624px */
+      width: 1440px;
+      height: 624px;
   }
   100% {
       opacity: 0;
       width: 0px;
-      height: 624px
+      height: 624px;
   }
 }
