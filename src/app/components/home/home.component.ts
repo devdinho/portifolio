@@ -4,7 +4,7 @@ import { SobreComponent } from "../sobre/sobre.component";
 import { ProjetosComponent } from "../projetos/projetos.component";
 import { CertificacoesComponent } from "../certificacoes/certificacoes.component";
 import { StatusComponent } from "../status/status.component";
-
+import {BibliotecasComponent} from "../bibliotecas/bibliotecas.component"
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -12,8 +12,9 @@ import { StatusComponent } from "../status/status.component";
     MainComponent,
     SobreComponent,
     ProjetosComponent,
+    BibliotecasComponent,
     CertificacoesComponent,
-    StatusComponent
+    StatusComponent,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
