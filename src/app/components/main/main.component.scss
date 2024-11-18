@@ -1,5 +1,4 @@
 *{
-    font-family: "Alegreya Sans", sans-serif;
     background-color: #94D8FF;
     background-image: url('../../../assets/homeBG.png');
     background-size: cover;
@@ -7,45 +6,8 @@
 #main{
     z-index: 10;
 }
-.fs-1{
-    font-size: 200px;
-    font-weight: 800;
-}
-.fs-2{
-    font-size: 128px;
-    font-weight: 500;
-}
-.fs-3{
-    font-size: 64px;
-    font-weight: 500;
-}
-.container{
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.main-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 5rem;
-}
-.text-shadow{
-    text-shadow: 0 4px 4px hsla(0, 0%, 0%, 0.25)!important;
-}
-.text-white{
-    color: #FFFFFF;
-}
 .main-gif{
     opacity: 0.5;
-}
-.footer{
-    display: flex;
-    justify-content: center;
-    position: relative;
-    top: 150px;
 }
 .a-move{
     transition: 1s all linear;
@@ -58,11 +20,4 @@
     opacity: 0.5;
     position: relative;
     animation: upDown 2s infinite;
-}
-@keyframes upDown {
-    0% {top: 20px;}
-    25%{top:0px;}
-    50%{top:20px}
-    75%{top:0px}
-    100%{top:20px;}
 }

@@ -1,5 +1,4 @@
 #sobre{
-    font-family: "Alegreya Sans", sans-serif;
     background-color: #ffffff;
     background-image: url('../../../assets/nnnoise.svg');
     background-size: cover;
@@ -7,9 +6,6 @@
     padding-top: 5rem;
     justify-content: flex-start;
     max-height: calc(100vh - 5rem);
-}
-html {
-    scroll-behavior: smooth;
 }
 #skillicons{
     background: url('https://skillicons.dev/icons?i=androidstudio,angular,aws,bootstrap,css,django,docker,express,figma,flask,git,github,html,java,javascript,jquery,kali,kotlin,kubernetes,linux,md,mongodb,mysql,nginx,nodejs,postgres,postman,py,react,rust,tailwind,vscode&perline=32');
@@ -25,28 +21,6 @@ html {
 @-webkit-keyframes slide {
     from { background-position: 0 0; }
     to { background-position: -100vw 0px; }
-}
-.fs-1{
-    font-size: 200px;
-    font-weight: 800;
-}
-.fs-2{
-    font-size: 128px;
-    font-weight: 500;
-}
-.fs-3{
-    font-size: 64px;
-    font-weight: 500;
-}
-.fs-4{
-    font-size: 27px;
-    font-weight: 500;
-}
-.text-primary{
-    color: #3C99D4;
-}
-.text-secondary{
-    color: #366994;
 }
 #sobre-container{
     display: flex;
@@ -68,24 +42,6 @@ html {
     position: relative;
     bottom: 15px;
     filter: drop-shadow(0px 4px 4px #366994);
-}
-.card{
-    background-color: #F8F7F7;
-    border-radius: 16px;
-    padding: 1rem;
-}
-.container{
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.main-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 5rem;
 }
 .toTop{
     z-index: 1;
@@ -110,18 +66,7 @@ html {
     padding: 1rem;
     opacity: 0.5;
 }
-.text-shadow{
-    text-shadow: 0 4px 4px hsla(0, 0%, 0%, 0.25)!important;
-}
-.img-shadow{
-    filter: drop-shadow(0px 4px 4px #366994);
-}
-.shadow{
-    box-shadow: 0 4px 12px hsla(0, 0%, 0%, 0.25)!important;
-}
-.text-white{
-    color: #FFFFFF;
-}
+
 .section{
     transition: all 0.6s ease-out;
 }
@@ -132,20 +77,4 @@ html {
 #contacts{
     display: flex;
     justify-content: space-evenly;
-}
-.btn-primary{
-    border-radius: 12px;
-    text-decoration: none;
-    background-color: #3C99D4;
-    padding: 1rem;
-    padding-left: 3rem;
-    padding-right: 3rem;
-    margin: 1rem;
-}
-@keyframes upDown {
-    0% {top: 10px;}
-    25%{top:0px;}
-    50%{top:10px}
-    75%{top:0px}
-    100%{top:10px;}
 }
