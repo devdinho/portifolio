@@ -9,8 +9,10 @@ import { HomeComponent } from './components/home/home.component';
     RouterOutlet,
     HomeComponent
   ],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  template: `
+  <app-home/>
+  <router-outlet />
+`,
 })
 export class AppComponent {
   title = 'portifolio';
