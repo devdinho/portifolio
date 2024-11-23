@@ -76,6 +76,18 @@ body{
     padding-right: 3rem;
     margin: 1rem;
 }
+.btn-link{
+    font-weight: 600;
+    padding: 0.25rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img{
+        padding: 0.25rem;
+    }
+}
 @keyframes upDown {
     0% {top: 10px;}
     25%{top:0px;}

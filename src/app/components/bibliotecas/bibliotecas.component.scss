@@ -3,43 +3,8 @@
     background-color: #366994;
     justify-content: flex-start;
 }
-.fs-4{
-    font-size: 32px;
-    font-weight: 500;
-}
-#bib-text{
+
+.list-projetos{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 40vw;
-    margin-right: 5vw;
-}
-#bib-title{
-   margin-bottom: 1rem;
-}
-.card{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #F8F7F7;
-    border-radius: 16px;
-    padding: 0.5rem 1rem 1rem 1rem;
-    width: calc(20rem);
-}
-.divLib{
-    display: flex;
-    justify-content: center;
-}
-.bib-img{
-    width: 20rem;
-    border-radius: 12px;
-}
-.bib-compability{
-    display: flex;
-    justify-content: center;
-    img{
-        margin-inline: 0.25rem;
-    }
+    justify-content: start;
 }

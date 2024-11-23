@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+
 import { HomeComponent } from './components/home/home.component';
 
 @Component({
@@ -7,7 +8,7 @@ import { HomeComponent } from './components/home/home.component';
   standalone: true,
   imports: [
     RouterOutlet,
-    HomeComponent
+    HomeComponent,
   ],
   template: `
   <app-home/>

@@ -1,0 +1,46 @@
+<div id="bib-text">
+    <div class="card shadow">
+        <span class="fs-4 text-primary text-shadow" style="font-size: 48px;">{{projeto.name}}</span>
+        <img class="bib-img" ngSrc="{{projeto.imagens[0].img}}" width="320" height="154"/>
+        <p class="fs-6 text-secondary">
+            {{projeto.imagens[0].descricao}}
+        </p>
+        <p class="fs-6 text-secondary">
+            @if (projeto.project_type == 1) {
+                Tecnologias utilizadas:
+            } 
+            @else{
+                Compatível com:
+            }
+        </p>
+        
+        <div class="bib-compability {{projeto.project_type_display}}">
+            @for (lib of projeto.stacks; track $index) {
+                <img class="lib-icon" src="{{lib.skillicon_name}}" alt="{{lib.name}}" title="{{lib.name}}"/>
+            }
+        </div>
+    </div>
+    <div class="divLib">
+        @if (projeto.project_type == 1 && projeto.avaliable_at == null) {
+            <a class="btn-primary bg-black btn-link text-white shadow" href="{{projeto.avaliable_at}}" target="_blank" rel="noopener noreferer">
+                <img style="width: 48px;" src="../../../assets/linkGlobe.png" alt="Icone Globo">
+                <span class="fs-5">
+                    Link
+                </span>
+            </a>
+        }@else if(projeto.project_type == 2 ){
+            <a class="btn-primary btn-link text-white shadow" href="{{projeto.avaliable_at}}" target="_blank" rel="noopener noreferer">
+                <img style="width: 48px;" src="https://pypi.org/static/images/logo-small.8998e9d1.svg" alt="Icone Pypi">
+                <span class="fs-5">
+                    Pypi
+                </span>
+            </a>
+        }
+        <a class="btn-primary bg-black btn-link text-white shadow" href="{{projeto.repo_name}}" target="_blank" rel="noopener noreferer">
+            <img src="https://skillicons.dev/icons?i=github" alt="Icone Github"/>
+            <span class="fs-5">
+                Github
+            </span>
+        </a>
+    </div>
+</div>

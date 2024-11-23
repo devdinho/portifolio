@@ -10,38 +10,10 @@
                 Conheça minhas bibliotecas:
             </p>
         </div>
-        <div>
-            <div id="bib-text">
-                <div class="card shadow">
-                    <span class="fs-4 text-primary text-shadow" style="font-size: 48px;">MaterialDash</span>
-                    <img class="bib-img" src="assets/images/bibliotecas/materialdash/materialdash.png"/>
-                    <p class="fs-6 text-secondary">
-                        MaterialDash é uma interface de administração moderna e responsiva para Django, baseada em Material Design. Este projeto é uma continuação da biblioteca django-material-admin de MaistrenkoAnton, 
-                        que foi descontinuada. Com MaterialDash, buscamos revitalizar e expandir as funcionalidades criadas originalmente, oferecendo uma solução mais atualizada e melhorada para os desenvolvedores.
-                    </p>
-                    <p class="fs-6 text-secondary">
-                        Compatível com:
-                    </p>
-                    <div class="bib-compability">
-                        <img src="https://skillicons.dev/icons?i=python"/>
-                        <img src="https://skillicons.dev/icons?i=django"/>
-                    </div>
-                </div>
-                <div class="divLib">
-                    <a class="btn-primary text-white shadow" href="https://pypi.org/project/materialdash/" target="_blank" rel="noopener noreferer">
-                        <img style="width: 48px;" src="https://pypi.org/static/images/logo-small.8998e9d1.svg" alt="Icone Pypi">
-                        <span class="fs-5">
-                            Pypi
-                        </span>
-                    </a>
-                    <a class="btn-primary text-white shadow" href="https://github.com/freitasanderson1/materialdash" target="_blank" rel="noopener noreferer">
-                        <img src="https://skillicons.dev/icons?i=github" alt="Icone Github"/>
-                        <span class="fs-5">
-                            Github
-                        </span>
-                    </a>
-                </div>
-            </div>
+        <div class="list-projetos">
+            @for (projeto of projetos; track $index) {        
+                <Card [projeto]="projeto"></Card>
+            }
         </div>
     </div>
 </div>
