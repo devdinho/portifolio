@@ -1,15 +1,25 @@
 <div id="projetos" class="container">
     <div>
-        <span class="fs-2 text-white text-shadow">
+        <span class="fs-3 text-white text-shadow">
             Projetos
         </span>
     </div>
-    <div style="display:flex; justify-content: center; flex-direction: column; align-items: center; margin-top: 10rem;">
-        <img ngSrc="assets/opa.png" width="368" height="368">
+    <div style="display:flex; justify-content: center; flex-direction: column; align-items: center; margin-top: 1.5rem;">
         <div>
-            <span class="fs-3 text-white text-shadow">
-                Parece que essa seção ainda está em processo de construção!
-            </span>
+            <p id="bib-title" class="fs-4 text-white text-shadow">
+                Conheça meus projetos:
+            </p>
+        </div>
+        <div class="list-projetos">
+            @for (projeto of projetos; track $index) {        
+                <Card [projeto]="projeto"></Card>
+            }
         </div>
     </div>
+    <div class="footer">
+        <a class="a-move img-shadow" href="#status">
+            <img class="arrow-main" src="assets/angles-down-solid.svg" width="40" height="50" priority>
+        </a>
+    </div>
 </div>
+<hr>

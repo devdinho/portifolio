@@ -5,10 +5,10 @@
     border-top: 2px solid #387eb8ab;
     padding-top: 5rem;
     justify-content: flex-start;
-    max-height: calc(100vh - 5rem);
+    height: calc(100vh - 5rem);
 }
 #skillicons{
-    background: url('https://skillicons.dev/icons?i=androidstudio,angular,aws,bootstrap,css,django,docker,express,figma,flask,git,github,html,java,javascript,jquery,kali,kotlin,kubernetes,linux,md,mongodb,mysql,nginx,nodejs,postgres,postman,py,react,rust,tailwind,vscode&perline=32');
+    background: url('https://skillicons.dev/icons?i=androidstudio,angular,aws,bootstrap,css,django,docker,express,figma,flask,git,github,html,java,javascript,jquery,kali,kotlin,kubernetes,linux,md,mongodb,mysql,nginx,nodejs,postgres,postman,py,react,rust,sass,ts,tailwind,vscode&perline=34');
     width: 100vw;
     z-index: 10;
     margin: 0;
@@ -16,9 +16,9 @@
     text-align: center;
     min-height: 48px !important;
     box-sizing: border-box;
-    -webkit-animation: slide 10s linear infinite;
+    animation: slide 10s linear infinite;
 }
-@-webkit-keyframes slide {
+@keyframes slide {
     from { background-position: 0 0; }
     to { background-position: -100vw 0px; }
 }
@@ -77,4 +77,42 @@
 #contacts{
     display: flex;
     justify-content: space-evenly;
+}
+
+@media (orientation: portrait) {
+    #sobre{
+        height: auto;
+    }
+    #sobre-container{
+        display: flex;
+        flex-direction: column-reverse;
+        max-width: 100vw;
+    }
+    #skillicons{
+        background: url('https://skillicons.dev/icons?i=androidstudio,angular,aws,bootstrap,css,django,docker,express,figma,flask,git,github,html,java,javascript,jquery,kali,kotlin,kubernetes,linux,md,mongodb,mysql,nginx,nodejs,postgres,postman,py,react,rust,sass,tailwind,vscode&perline=11');
+        max-width: 100vw;
+        z-index: 10;
+        margin: 0;
+        padding-left: 0.25rem;
+        text-align: center;
+        min-height: 160px !important;
+        box-sizing: border-box;
+        animation: slide 10s linear infinite;
+    }
+    @keyframes slide {
+        from { background-position: 0 0; }
+        to { background-position: -500vw 0px !important; }
+    }
+    #sobre-text{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 90vw;
+        margin-right: 5vw;
+    }
+    #sobre-title{
+        font-size: 88px !important;
+    }
+    
 }

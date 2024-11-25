@@ -21,7 +21,7 @@
         </div>
     </div>
     <div class="divLib">
-        @if (projeto.project_type == 1 && projeto.avaliable_at == null) {
+        @if (projeto.project_type == 1 && projeto.avaliable_at != null) {
             <a class="btn-primary bg-black btn-link text-white shadow" href="{{projeto.avaliable_at}}" target="_blank" rel="noopener noreferer">
                 <img style="width: 48px;" src="../../../assets/linkGlobe.png" alt="Icone Globo">
                 <span class="fs-5">

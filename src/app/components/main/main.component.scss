@@ -9,15 +9,31 @@
 .main-gif{
     opacity: 0.5;
 }
-.a-move{
-    transition: 1s all linear;
-    -webkit-transition: 1s all linear;
-    -moz-transition: 1s all linear;
-    -ms-transition: 1s all linear;
-    -o-transition: 1s all linear;
-}
-.arrow-main{
-    opacity: 0.5;
-    position: relative;
-    animation: upDown 2s infinite;
+@media (orientation: portrait) {
+    .main-container {
+        display: flex;
+        flex-direction: column-reverse;
+        max-width: 100vw;
+        div{
+            div{
+                display: flex;
+            }
+        }
+        span{
+            margin-left: 5vw;
+            margin-right: auto;
+        }
+    }
+    .main-gif{
+        max-width: calc(100vw - 5rem);
+        max-height:60vh;
+        width: auto;
+        height: auto;
+    }
+    .footer{
+        top: 50px;
+    }
+    .a-move{
+        display: flex !important;
+    }
 }

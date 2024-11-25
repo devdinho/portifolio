@@ -7,4 +7,11 @@
 .list-projetos{
     display: flex;
     justify-content: start;
+    overflow-x: scroll;
+}
+.footer{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 50px;
 }

@@ -22,7 +22,6 @@ export class BibliotecasComponent implements OnInit{
     this.service.getBibliotecas().subscribe({
       next: (res) => {
         this.projetos = (res)
-        console.log(this.projetos)
       },
       error: (err) => console.log(err)
     })
