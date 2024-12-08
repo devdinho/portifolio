@@ -4,8 +4,9 @@
     background-image: url('../../../assets/code wallpaper.jpg');
     background-size: cover;
     justify-content: flex-start;
-    padding-top: 5rem;
-    height: 100vh;
+    padding-top: 2.5rem;
+    min-height: 100vh;
+    height: auto;
 }
 #status-div{
     display: flex;
