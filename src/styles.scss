@@ -118,14 +118,10 @@ hr {
 .list-projetos{
     width: 95vw;
     display: flex;
-    justify-content: start;
+    justify-content: center;
     margin-left: auto;
     margin-right: auto;
     overflow: auto !important;
-    card{
-        margin-left: auto;
-        margin-right: auto;
-    }
 }
 *::-webkit-scrollbar {
     height: 8px;
