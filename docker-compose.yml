@@ -1,0 +1,11 @@
+services:
+  freitascodes:
+    container_name: freitascodes
+    build: .
+    environment:
+      - port=4200
+    ports:
+      - '4200:4200'
+    volumes:
+      - ./:/freitascodes
+    

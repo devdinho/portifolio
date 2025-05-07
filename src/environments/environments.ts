@@ -1,5 +1,5 @@
 export const environment = {
-    production: false,
+    production: true,
     portifolioApiRoot: 'https://portifolio.dinho.dev/',
     apiBibliotecas: 'https://portifolio.dinho.dev/api/projetos?type=2',
     apiProjetos: 'https://portifolio.dinho.dev/api/projetos',
