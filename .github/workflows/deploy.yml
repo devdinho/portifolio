@@ -18,7 +18,7 @@ jobs:
         with:
           host: ${{ secrets.VM_IP }}
           username: ${{ secrets.VM_USER }}
-          password: ${{ secrets.VM_PASSKEY }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
           script: |
             cd ${{ secrets.VM_PWD }}
