@@ -1,11 +1,11 @@
 services:
-  freitascodes:
-    container_name: freitascodes
+  portifolio_web:
+    container_name: portifolio_web
     build: .
     environment:
       - port=4200
     ports:
       - '4200:4200'
     volumes:
-      - ./:/freitascodes
+      - ./:/portifolio_web
     
