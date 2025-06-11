@@ -1,7 +1,7 @@
 <div id="bib-text">
     <div class="card shadow">
         <span class="fs-4 text-primary text-shadow" style="font-size: 48px;">{{projeto.name}}</span>
-        <img class="bib-img" ngSrc="{{projeto.imagen.img}}" width="320" height="154"/>
+        <img class="bib-img" [ngSrc]="projeto.imagen.img" width="320" height="154"/>
         <p class="fs-6 text-secondary">
             {{projeto.imagen.descricao}}
         </p>
