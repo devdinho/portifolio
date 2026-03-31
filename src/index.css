@@ -1,125 +1,96 @@
-.barlow-condensed-thin {
-  font-family: "Barlow Condensed", sans-serif;
-  font-weight: 100;
-  font-style: normal;
+/* Spinner */
+.custom-loader {
+  width: 100px;
+  height: 100px;
+  border: 4px solid #D9D9D9;
+  border-radius: 50%;
+  display: grid;
+  animation: h1 3s infinite linear;
+  transform-origin: 50% 80%;
+}
+.custom-loader.light-mode{
+  border: 4px solid #002F59 !important;
+}
+.custom-loader:before,
+.custom-loader:after {
+  content:"";
+  grid-area: 1/1;
+  border:inherit;
+  border-radius: 50%;
+  animation: inherit;
+  animation-duration: 2s;
+  transform-origin: inherit;
+}
+.custom-loader:after {
+  --s:-1;
 }
 
-.barlow-condensed-extralight {
-  font-family: "Barlow Condensed", sans-serif;
-  font-weight: 200;
-  font-style: normal;
+@keyframes h1 {
+    100% {transform:rotate(calc(var(--s,1)*1turn))}
 }
 
-.barlow-condensed-light {
-  font-family: "Barlow Condensed", sans-serif;
-  font-weight: 300;
-  font-style: normal;
-}
-
-.barlow-condensed-regular {
-  font-family: "Barlow Condensed", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.barlow-condensed-medium {
-  font-family: "Barlow Condensed", sans-serif;
-  font-weight: 500;
-  font-style: normal;
-}
-
-.barlow-condensed-semibold {
-  font-family: "Barlow Condensed", sans-serif;
-  font-weight: 600;
-  font-style: normal;
-}
-
-.barlow-condensed-bold {
-  font-family: "Barlow Condensed", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-}
-
-.barlow-condensed-extrabold {
-  font-family: "Barlow Condensed", sans-serif;
-  font-weight: 800;
-  font-style: normal;
-}
-
-.barlow-condensed-black {
-  font-family: "Barlow Condensed", sans-serif;
-  font-weight: 900;
-  font-style: normal;
-}
-
-.barlow-condensed-thin-italic {
-  font-family: "Barlow Condensed", sans-serif;
-  font-weight: 100;
-  font-style: italic;
-}
-
-.barlow-condensed-extralight-italic {
-  font-family: "Barlow Condensed", sans-serif;
-  font-weight: 200;
-  font-style: italic;
-}
-
-.barlow-condensed-light-italic {
-  font-family: "Barlow Condensed", sans-serif;
-  font-weight: 300;
-  font-style: italic;
-}
-
-.barlow-condensed-regular-italic {
-  font-family: "Barlow Condensed", sans-serif;
-  font-weight: 400;
-  font-style: italic;
-}
-
-.barlow-condensed-medium-italic {
-  font-family: "Barlow Condensed", sans-serif;
-  font-weight: 500;
-  font-style: italic;
-}
-
-.barlow-condensed-semibold-italic {
-  font-family: "Barlow Condensed", sans-serif;
-  font-weight: 600;
-  font-style: italic;
-}
-
-.barlow-condensed-bold-italic {
-  font-family: "Barlow Condensed", sans-serif;
-  font-weight: 700;
-  font-style: italic;
-}
-
-.barlow-condensed-extrabold-italic {
-  font-family: "Barlow Condensed", sans-serif;
-  font-weight: 800;
-  font-style: italic;
-}
-
-.barlow-condensed-black-italic {
-  font-family: "Barlow Condensed", sans-serif;
-  font-weight: 900;
-  font-style: italic;
-}
-
-.alexandria-title {
+/* General styles */
+.title {
   font-optical-sizing: auto;
   font-weight: 800;
   font-style: normal;
   text-transform: uppercase;
 }
 
-:root {
+.title {
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  font-family: "Alexandria", sans-serif;
+  font-weight: 900;
+  font-size: 24px;
+  margin: 16px 0;
+  letter-spacing: 2px;
+  min-height: 32px;
+  white-space: pre;
+  display: inline-block;
+}
+
+.typing-cursor {
+  display: inline-block;
+  width: 1ch;
+  color: inherit;
+  animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+html {
   font-family: "Alexandria", sans-serif;
   background-color: #000E1C;
   color: #FFFFFF;
 }
 
-body.light-mode {
+html.light-mode {
   background-color: #D9D9D9;
   color: #262626;
+}
+
+.dev-img {
+  width: 100%;
+  height: auto;
+}
+
+#light-mode-toggle {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  font-size: 12px;
 }
