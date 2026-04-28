@@ -55,17 +55,19 @@ const experiences: Experience[] = [
   {
     id: 'medflow',
     company: 'Medflow Tech',
-    position: 'Senior Backend Engineer',
+    position: 'Senior Software Engineer',
     periodLabel: '03/2026 – Atual',
     startNum: monthYear(2026, 3),
     endNum: null,
     description:
-      'Desenvolvimento e evolução da arquitetura backend da plataforma MedFlow, com foco em escalabilidade, performance e confiabilidade da infraestrutura.',
-    technologies: ['Python', 'Django', 'PostgreSQL', 'React', 'Docker', 'Cloud', 'FHIR'],
+      'Desenvolvimento e evolução de funcionalidades backend com Python e Django. Implementação de interfaces e melhorias no frontend com React. Construção e consumo de APIs REST integradas a sistemas clínicos. Atuação em arquitetura e decisões técnicas visando escalabilidade e performance. Colaboração com produto e design para entrega de soluções de impacto na área da saúde.',
+    technologies: ['Python', 'Django', 'React', 'PostgreSQL', 'AWS', 'APIs REST'],
     achievements: [
-      'Desenvolvimento e evolução da arquitetura backend da plataforma',
-      'Implementação de APIs e integrações entre serviços',
-      'Melhoria de escalabilidade, performance e confiabilidade',
+      'Desenvolvimento e evolução de funcionalidades backend com Python e Django',
+      'Implementação de interfaces e melhorias no frontend com React',
+      'Construção e consumo de APIs REST integradas a sistemas clínicos',
+      'Atuação em arquitetura e decisões técnicas visando escalabilidade e performance',
+      'Colaboração com produto e design para entrega de soluções de impacto na área da saúde',
     ],
   },
   {
@@ -274,7 +276,7 @@ export default function WorkExperience() {
                 icon: <LinkedinIcon size={15} />,
                 backgroundColor: '#4fc3f7',
               },
-            ].map(({ href, label, icon, color }) => (
+            ].map(({ href, label, icon, backgroundColor }) => (
               <a
                 key={label}
                 href={href}
@@ -292,7 +294,7 @@ export default function WorkExperience() {
                   fontFamily: 'monospace',
                   fontSize: 13,
                   fontWeight: 600,
-                  color: color,
+                  color: backgroundColor,
                   textDecoration: 'none',
                   transition: 'border-color 0.2s, background 0.2s',
                 }}
@@ -407,10 +409,6 @@ export default function WorkExperience() {
                 )
               })}
             </div>
-
-            <p style={{ fontFamily: 'monospace', fontSize: 11, color: c.muted, marginTop: 4 }}>
-              // clique em uma barra para expandir os detalhes
-            </p>
           </div>
         </div>
 
