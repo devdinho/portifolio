@@ -1,7 +1,7 @@
 const roles = [
-  "FULL STACK ENGINEER",
+  "SENIOR SOFTWARE ENGINEER",
   "AI PLATFORM ENGINEER",
-  "SOFTWARE ARCHITECT"
+  "SOFTWARE ARCHITECT",
 ];
 
 export default roles;
