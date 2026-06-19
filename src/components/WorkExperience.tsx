@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { Mail, Phone } from 'lucide-react'
-import { useThemeStore } from '../storeTheme'
 
 
 const GithubIcon = ({ size = 15 }: { size?: number }) => (
@@ -183,27 +182,24 @@ const YEAR_LABELS = Array.from(
 )
 
 export default function WorkExperience() {
-  const { mode } = useThemeStore()
   const [activeId, setActiveId] = useState<string | null>(null)
 
-  const isDark = mode === 'dark'
-
   const c = {
-    text:             isDark ? '#FFFFFF'                   : '#000E1C',
-    muted:            isDark ? '#8899aa'                   : '#4a5568',
-    cardBg:           isDark ? 'rgba(255,255,255,0.04)'    : 'rgba(0,47,89,0.05)',
-    cardBorder:       isDark ? 'rgba(255,255,255,0.09)'    : 'rgba(0,47,89,0.18)',
-    cardBorderActive: isDark ? 'rgba(255,255,255,0.25)'    : 'rgba(0,47,89,0.45)',
-    axisLine:         isDark ? 'rgba(255,255,255,0.12)'    : 'rgba(0,47,89,0.2)',
-    barActive:        isDark ? '#4fc3f7'                   : '#002F59',
-    barInactive:      isDark ? 'rgba(79,195,247,0.28)'     : 'rgba(0,47,89,0.22)',
-    barTextActive:    isDark ? '#000E1C'                   : '#FFFFFF',
-    barTextInactive:  isDark ? '#FFFFFF'                   : '#000E1C',
-    accent:           isDark ? '#4fc3f7'                   : '#002F59',
-    greenDot:         isDark ? '#4ade80'                   : '#16a34a',
-    greenBadgeBg:     isDark ? 'rgba(74,222,128,0.1)'      : 'rgba(22,163,74,0.08)',
-    tagBg:            isDark ? 'rgba(255,255,255,0.06)'    : 'rgba(0,47,89,0.07)',
-    tagBorder:        isDark ? 'rgba(255,255,255,0.14)'    : 'rgba(0,47,89,0.22)',
+    text:             '#FFFFFF',
+    muted:            '#8899aa',
+    cardBg:           'rgba(255,255,255,0.04)',
+    cardBorder:       'rgba(255,255,255,0.09)',
+    cardBorderActive: 'rgba(255,255,255,0.25)',
+    axisLine:         'rgba(255,255,255,0.12)',
+    barActive:        '#4fc3f7',
+    barInactive:      'rgba(79,195,247,0.28)',
+    barTextActive:    '#000E1C',
+    barTextInactive:  '#FFFFFF',
+    accent:           '#4fc3f7',
+    greenDot:         '#4ade80',
+    greenBadgeBg:     'rgba(74,222,128,0.1)',
+    tagBg:            'rgba(255,255,255,0.06)',
+    tagBorder:        'rgba(255,255,255,0.14)',
   }
 
   const ROW_HEIGHT = 52
@@ -490,7 +486,7 @@ export default function WorkExperience() {
       <section id="projects" style={{ padding: '0 0 140px', color: c.text }}>
         <div style={{ maxWidth: 960, margin: '0 auto', padding: '0 40px' }}>
 
-          <div style={{ textAlign: 'center', marginBottom: 48 }}>
+          <div style={{ textAlign: 'center', marginBottom: 48 }} data-aos="fade-up">
             <h2 style={{ fontSize: '1.1rem', fontWeight: 700, margin: '0 0 8px', letterSpacing: '0.06em' }}>
               Projetos Relevantes
             </h2>
@@ -504,9 +500,11 @@ export default function WorkExperience() {
               gap: 16,
             }}
           >
-            {projects.map((project) => (
+            {projects.map((project, i) => (
               <div
                 key={project.id}
+                data-aos="fade-up"
+                data-aos-delay={String(i * 80)}
                 style={{
                   border: `1px solid ${c.cardBorder}`,
                   borderRadius: 10,
