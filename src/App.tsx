@@ -7,6 +7,14 @@ import roles from './constants/roles'
 import Skills from './components/Skills'
 import WorkExperience from './components/WorkExperience'
 
+type Particle = {
+  x: number
+  y: number
+  size: number
+  speedX: number
+  speedY: number
+  cyan: boolean
+}
 
 function App() {
   const [roleIndex, setRoleIndex] = useState(0)
@@ -25,33 +33,51 @@ function App() {
     canvas.width = window.innerWidth
     canvas.height = window.innerHeight
 
-    const particles: { x: number; y: number; size: number; speedX: number; speedY: number }[] = []
-
-    for (let i = 0; i < 100; i++) {
+    const particles: Particle[] = []
+    for (let i = 0; i < 120; i++) {
       particles.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        size: Math.random() * 2 + 0.1,
+        size: Math.random() * 1.8 + 0.2,
         speedX: Math.random() * 2 - 1,
         speedY: Math.random() * 2 - 1,
+        cyan: Math.random() < 0.18,
       })
     }
 
     function animate() {
       if (!ctx) return
+
+      // Background
       ctx.fillStyle = '#000E1C'
       ctx.fillRect(0, 0, canvas.width, canvas.height)
 
+      // Radial glow centred in the hero area
+      const cx = canvas.width / 2
+      const cy = canvas.height * 0.48
+      const r = Math.min(canvas.width, canvas.height) * 0.42
+
+      const glow = ctx.createRadialGradient(cx, cy, 0, cx, cy, r)
+      glow.addColorStop(0,   'rgba(79, 195, 247, 0.09)')
+      glow.addColorStop(0.5, 'rgba(79, 195, 247, 0.04)')
+      glow.addColorStop(1,   'rgba(0, 0, 0, 0)')
+      ctx.fillStyle = glow
+      ctx.fillRect(0, 0, canvas.width, canvas.height)
+
+      // Particles
       for (const p of particles) {
         p.x += p.speedX
         p.y += p.speedY
 
-        if (p.x > canvas.width) p.x = 0
-        if (p.x < 0) p.x = canvas.width
+        if (p.x > canvas.width)  p.x = 0
+        if (p.x < 0)             p.x = canvas.width
         if (p.y > canvas.height) p.y = 0
-        if (p.y < 0) p.y = canvas.height
+        if (p.y < 0)             p.y = canvas.height
 
-        ctx.fillStyle = 'rgba(255, 255, 255, 0.5)'
+        ctx.fillStyle = p.cyan
+          ? 'rgba(79, 195, 247, 0.65)'
+          : 'rgba(255, 255, 255, 0.45)'
+
         ctx.beginPath()
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2)
         ctx.fill()
