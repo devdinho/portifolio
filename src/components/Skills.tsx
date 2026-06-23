@@ -17,7 +17,7 @@ const skillCategories = [
   },
   {
     label: 'Cloud & DevOps',
-    items: ['Docker', 'AWS', 'CI/CD', 'Nginx'],
+    items: ['Docker', 'AWS', 'CI/CD', 'Nginx', 'Prometheus', 'Grafana'],
   },
 ]
 

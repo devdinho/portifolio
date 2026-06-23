@@ -85,13 +85,15 @@ const experiences: Experience[] = [
     periodLabel: '02/2026 – Atual',
     current: true,
     description:
-      'Arquitetura e desenvolvimento de uma plataforma corporativa multi-tenant para agentes inteligentes, incluindo governança de tenants, autenticação federada e isolamento de dados por cliente.',
-    technologies: ['Python', 'FastAPI', 'LLMs', 'RAG', 'PGVector', 'MCP', 'OAuth', 'Docker', 'CI/CD'],
+      'Primeiro engenheiro contratado para arquitetar e desenvolver do zero uma suíte corporativa multi-tenant de agentes de IA com 15+ serviços interoperáveis, cobrindo governança de tenants, orquestração de LLMs, agentes especializados, design system compartilhado e monitoramento de infraestrutura.',
+    technologies: ['Python', 'FastAPI', 'Go', 'React 19', 'TypeScript', 'MCP', 'RAG', 'Microsoft Graph', 'Crawl4AI', 'PostgreSQL', 'Redis', 'Prometheus', 'Grafana', 'Docker'],
     achievements: [
-      'Desenvolvimento do núcleo de orquestração de IA com planejamento de tarefas, execução paralela, memória persistente e streaming em tempo real',
-      'Construção de agentes especializados para e-mail corporativo e pesquisa web com Microsoft Graph, Crawl4AI e busca híbrida',
-      'Implementação de autenticação federada, billing de consumo de IA, observabilidade e comunicação entre microsserviços',
-      'Evolução da arquitetura da plataforma: backend, frontends administrativos, design system compartilhado e pipelines CI/CD',
+      'Auth service em Go (Fiber + Redis): identity router com < 5ms em cache hit, 4 camadas de proteção DDoS, rate limiting e métricas Prometheus — gateway de entrada para toda a plataforma',
+      'Orquestrador multi-agent (Harness) com 22 roles LLM, ethics gate, 3 rotas de execução (simple/complex/modular) e SDK compartilhado zuraio-mcp-core para criação de agentes MCP',
+      'Agente de e-mail corporativo com Microsoft 365 via Graph API, RAG sobre caixas de entrada, processamento de anexos (PDF, DOCX, XLSX) e workers assíncronos com arq + Redis',
+      'Web crawler com Crawl4AI (BFS deep crawl), busca híbrida via SearXNG e control plane em Django — pipeline completo de coleta e indexação para RAG',
+      'Design system @zuraio/ui: 47+ componentes (React 19, ShadCN, Tailwind), publicado no GitHub Packages com Storybook, consumido por 4 frontends com i18n em 4 idiomas',
+      'Stack de observabilidade com Prometheus, Grafana, cAdvisor e node_exporter — dashboards embeddados nos frontends em modo kiosk via iframe',
     ],
   },
 ]
