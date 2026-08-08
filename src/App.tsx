@@ -162,7 +162,7 @@ function App() {
             <span className="typing-cursor">|</span>
           </div>
           <p className="hero-tagline">
-            Construo plataformas de IA que escalam.
+            Building AI platforms, distributed systems and cloud-native software.
           </p>
           <span className="hero-location">Palmas, TO</span>
           <div className="scroll-indicator">

@@ -33,96 +33,185 @@ interface Project {
 const experiences: Experience[] = [
   {
     id: 'uft',
-    company: 'Universidade Federal do Tocantins',
+    company: 'Federal University of Tocantins',
     position: 'Software Engineer',
     periodLabel: '03/2022 – 07/2025',
     current: false,
     description:
-      'Atuação em projetos institucionais e governamentais, incluindo sistemas de gestão pública, soluções para agricultura familiar e sistemas SSE.',
-    technologies: ['Python', 'Django', 'DRF', 'JavaScript', 'MariaDB', 'PostgreSQL', 'REST API', 'SSE'],
+      'Software engineering across institutional and government platforms, covering backend development, data modeling, requirements analysis and full-stack delivery.',
+    technologies: [
+      'Python',
+      'Django',
+      'Django REST Framework',
+      'JavaScript',
+      'PostgreSQL',
+      'MariaDB',
+      'REST APIs',
+      'SSE',
+    ],
     achievements: [
-      'Desenvolvimento de APIs REST e sistemas de gestão pública',
-      'Soluções para agricultura familiar com georreferenciamento',
-      'Modelagem de bancos de dados e levantamento de requisitos',
-      'Desenvolvimento full stack com Python, Django, DRF e JavaScript',
+      'Developed REST APIs and public-sector management systems used across institutional and government initiatives',
+      'Designed database models and backend services for government and agricultural technology solutions',
+      'Implemented real-time server-sent event (SSE) capabilities for interactive applications',
+      'Delivered full-stack features from requirements analysis through backend, database and frontend implementation',
     ],
   },
   {
     id: 'sesau',
-    company: 'Secretaria Estadual de Saúde – TO',
+    company: 'State Department of Health – Tocantins',
     position: 'Software Engineer',
     periodLabel: '07/2025 – 03/2026',
     current: false,
     description:
-      'Responsável técnico pelo barramento de integração da Rede Estadual de Dados da Saúde (REDS) e pelo portal estratégico de gestão do SUS (CIEGES).',
-    technologies: ['Python', 'FastAPI', 'Go', 'Django', 'React', 'PostgreSQL', 'GitLab CI/CD', 'Docker'],
+      'Technical ownership of integration and strategic data platforms supporting the state public healthcare ecosystem.',
+    technologies: [
+      'Python',
+      'FastAPI',
+      'Go',
+      'Django',
+      'React',
+      'PostgreSQL',
+      'Docker',
+      'GitLab CI/CD',
+    ],
     achievements: [
-      'REDS: arquitetura distribuída baseada em eventos com FastAPI e Go, processamento assíncrono e governança de dados',
-      'CIEGES: backend Django, frontend React, CI/CD GitLab e testes automatizados',
-      'Segurança e conformidade em ambiente crítico de saúde pública',
+      'Technical owner of the integration bus for REDS (State Health Data Network)',
+      'Designed an event-driven distributed architecture using FastAPI and Go with asynchronous processing',
+      'Implemented data integration, security and governance mechanisms for a public healthcare environment',
+      'Led backend and frontend development of CIEGES, a strategic management portal for the state SUS ecosystem',
+      'Implemented automated testing and GitLab CI/CD pipelines for production delivery',
     ],
   },
   {
     id: 'medflow',
     company: 'Medflow Tech',
     position: 'Senior Software Engineer',
-    periodLabel: '03/2026 – Atual',
+    periodLabel: '03/2026 – Present',
     current: true,
     description:
-      'Desenvolvimento e evolução de soluções para a área da saúde em múltiplos produtos, incluindo plataformas clínicas e sistemas de matriciamento.',
-    technologies: ['Python', 'Django', 'React', 'PostgreSQL', 'AWS', 'APIs REST'],
+      'Senior software engineering across healthcare platforms, combining backend development, infrastructure evolution and technical collaboration with internal and partner teams.',
+    technologies: [
+      'Python',
+      'Django',
+      'React',
+      'PostgreSQL',
+      'AWS',
+      'REST APIs',
+    ],
     achievements: [
-      'Desenvolvimento backend com Python/Django e frontend em React',
-      'Evolução da infraestrutura da plataforma e integração entre serviços',
-      'Apoio técnico a desenvolvedores parceiros com configuração de ambientes e deploy',
-      'Participação em decisões de arquitetura, escalabilidade e evolução técnica dos produtos',
+      'Develop backend services and product capabilities using Python and Django across multiple healthcare products',
+      'Contribute to frontend development and integration workflows using React',
+      'Drive infrastructure and deployment improvements across application environments and services',
+      'Support partner engineering teams with environment setup, deployment workflows and technical knowledge transfer',
+      'Contribute to architectural decisions involving scalability, service integration and long-term platform evolution',
     ],
   },
   {
     id: 'zuraio',
     company: 'Zuraio',
     position: 'Founding AI Platform Engineer',
-    periodLabel: '02/2026 – Atual',
+    periodLabel: '02/2026 – Present',
     current: true,
+
     description:
-      'Primeiro engenheiro contratado para arquitetar e desenvolver do zero uma suíte corporativa multi-tenant de agentes de IA com 15+ serviços interoperáveis, cobrindo governança de tenants, orquestração de LLMs, agentes especializados, design system compartilhado e monitoramento de infraestrutura.',
-    technologies: ['Python', 'FastAPI', 'Go', 'React 19', 'TypeScript', 'MCP', 'RAG', 'Microsoft Graph', 'Crawl4AI', 'PostgreSQL', 'Redis', 'Prometheus', 'Grafana', 'Docker'],
+      'First engineer responsible for architecting and building an enterprise multi-tenant AI platform from the ground up, spanning 15+ interoperable services, agent orchestration, enterprise integrations, shared frontend infrastructure and platform observability.',
+
+    technologies: [
+      'Python',
+      'FastAPI',
+      'Go',
+      'React 19',
+      'TypeScript',
+      'MCP',
+      'RAG',
+      'PostgreSQL',
+      'Redis',
+      'Docker',
+      'Prometheus',
+      'Grafana',
+      'Microsoft Graph',
+      'Crawl4AI',
+    ],
+
     achievements: [
-      'Auth service em Go (Fiber + Redis): identity router com < 5ms em cache hit, 4 camadas de proteção DDoS, rate limiting e métricas Prometheus — gateway de entrada para toda a plataforma',
-      'Orquestrador multi-agent (Harness) com 22 roles LLM, ethics gate, 3 rotas de execução (simple/complex/modular) e SDK compartilhado zuraio-mcp-core para criação de agentes MCP',
-      'Agente de e-mail corporativo com Microsoft 365 via Graph API, RAG sobre caixas de entrada, processamento de anexos (PDF, DOCX, XLSX) e workers assíncronos com arq + Redis',
-      'Web crawler com Crawl4AI (BFS deep crawl), busca híbrida via SearXNG e control plane em Django — pipeline completo de coleta e indexação para RAG',
-      'Design system @zuraio/ui: 47+ componentes (React 19, ShadCN, Tailwind), publicado no GitHub Packages com Storybook, consumido por 4 frontends com i18n em 4 idiomas',
-      'Stack de observabilidade com Prometheus, Grafana, cAdvisor e node_exporter — dashboards embeddados nos frontends em modo kiosk via iframe',
+      'Architected the core multi-tenant platform architecture across 15+ interoperable services, covering tenant isolation, authentication, AI orchestration, enterprise integrations and infrastructure',
+
+      'Built the Go-based authentication service using Fiber and Redis, achieving sub-5ms cache-hit response times and implementing DDoS protection layers, rate limiting and Prometheus metrics',
+
+      'Designed and implemented the multi-agent orchestration platform with 22 LLM roles, an ethics gate and three execution strategies (simple, complex and modular), alongside the shared zuraio-mcp-core SDK for MCP-based agents',
+
+      'Built an enterprise email agent integrating Microsoft 365 through Microsoft Graph, combining mailbox RAG, document processing for PDF/DOCX/XLSX attachments and asynchronous workers using arq and Redis',
+
+      'Designed the web intelligence and RAG ingestion pipeline using Crawl4AI for BFS deep crawling, SearXNG hybrid search and a Django-based control plane for collection and indexing',
+
+      'Designed the knowledge architecture supporting company-level and user-level knowledge, combining document ingestion, chunking, vector storage and retrieval for context-aware AI agents',
+
+      'Designed and maintained containerized deployment infrastructure across development, staging and production environments, integrating CI/CD, reverse proxies, service discovery and platform observability',
+
+      'Architected the shared @zuraio/ui design system with 47+ React 19 components, Storybook and GitHub Packages distribution, adopted across 4 frontends with internationalization in 4 languages',
+
+      'Implemented platform observability using Prometheus, Grafana, cAdvisor and node_exporter, including embedded infrastructure dashboards integrated into the platform frontends',
     ],
   },
 ]
 
 const projects: Project[] = [
   {
-    id: 'iac',
-    name: 'Instituto de Atenção às Cidades',
-    description: 'Desenvolvimento de aplicações para gestão pública com stack mobile e web.',
-    technologies: ['Kotlin', 'Spring Boot', 'Angular', 'React Native', 'PostgreSQL'],
+    id: 'noeris',
+    name: 'Noeris',
+    description:
+      'Conversational analytics platform combining LLMs, cognitive classification and automated insight generation over structured data and dashboards.',
+    technologies: [
+      'LLMs',
+      'Python',
+      'Django',
+      'RAG',
+      'Analytics',
+      'Dashboards',
+    ],
   },
   {
     id: 'armoreddjango',
     name: 'ArmoredDjango',
-    description: 'Template Django para produção com segurança e boas práticas integradas.',
-    technologies: ['JWT', 'Segurança', 'Rate limiting', 'Docker', 'CI/CD', 'Testes'],
-  },
-  {
-    id: 'noeris',
-    name: 'Noeris',
-    description: 'Plataforma de Analytics Conversacional baseada em IA com classificação cognitiva e geração de insights.',
-    technologies: ['LLMs', 'Classificação cognitiva', 'Geração de insights', 'Arquitetura desacoplada', 'Dashboards'],
+    description:
+      'Production-ready Django foundation focused on security, API protection and operational reliability.',
+    technologies: [
+      'Django',
+      'JWT',
+      'Rate Limiting',
+      'Docker',
+      'CI/CD',
+      'Automated Testing',
+      'Security',
+    ],
   },
   {
     id: 'plantagora',
     name: 'PlantAgora',
-    description: 'Plataforma web e mobile para gestão de hortas comunitárias.',
-    technologies: ['Django', 'React Native', 'APIs REST', 'Georreferenciamento'],
+    description:
+      'Web and mobile platform for community garden management, combining geospatial features, REST APIs and cross-platform mobile development.',
+    technologies: [
+      'Django',
+      'React Native',
+      'Expo',
+      'PostgreSQL',
+      'REST APIs',
+      'Geospatial',
+    ],
   },
+  {
+    id: 'iac',
+    name: 'Institute for Urban Care',
+    description:
+      'Public-sector applications spanning mobile and web platforms for institutional and municipal management.',
+    technologies: [
+      'Kotlin',
+      'Spring Boot',
+      'Angular',
+      'React Native',
+      'PostgreSQL',
+    ],
+  }
 ]
 
 const c = {
@@ -176,14 +265,14 @@ export default function WorkExperience() {
               color: c.muted, border: `1px solid ${c.cardBorder}`, borderRadius: 6,
               padding: '3px 12px', backdropFilter: 'blur(4px)',
             }}>
-              2022 —{' '}<span style={{ color: c.accent }}>presente</span>
+              2022 —{' '}<span style={{ color: c.accent }}>present</span>
             </div>
           </div>
 
           {/* Section title */}
           <div style={{ textAlign: 'center', marginBottom: 56 }} data-aos="fade-up">
             <h2 style={{ fontSize: '1.1rem', fontWeight: 700, margin: '0 0 8px', letterSpacing: '0.06em' }}>
-              Experiência
+              Experience
             </h2>
             <div style={{ width: 32, height: 2, background: c.accent, margin: '0 auto' }} />
           </div>
@@ -240,7 +329,7 @@ export default function WorkExperience() {
                               borderRadius: 999, color: c.greenDot,
                               background: c.greenBadgeBg, border: `1px solid ${c.greenDot}`,
                             }}>
-                              Atual
+                              Current
                             </span>
                           )}
                         </div>
@@ -301,7 +390,7 @@ export default function WorkExperience() {
 
           <div style={{ textAlign: 'center', marginBottom: 48 }} data-aos="fade-up">
             <h2 style={{ fontSize: '1.1rem', fontWeight: 700, margin: '0 0 8px', letterSpacing: '0.06em' }}>
-              Projetos Relevantes
+              Featured Projects
             </h2>
             <div style={{ width: 32, height: 2, background: c.accent, margin: '0 auto' }} />
           </div>

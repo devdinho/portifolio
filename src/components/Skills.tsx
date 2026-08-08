@@ -1,23 +1,63 @@
 const skillCategories = [
   {
-    label: 'Inteligência Artificial',
-    items: ['AI Agents', 'LLM Integration', 'RAG', 'PGVector', 'MCP', 'AI Orchestration'],
+    label: 'AI & Agent Systems',
+    items: [
+      'AI Agents',
+      'LLM Integration',
+      'Agent Orchestration',
+      'RAG',
+      'MCP',
+      'Context Management',
+      'LLM Workflows',
+      'PGVector',
+    ],
   },
   {
-    label: 'Backend',
-    items: ['Python', 'Django', 'FastAPI', 'Go', 'Node.js'],
+    label: 'Backend & Distributed Systems',
+    items: [
+      'Python',
+      'FastAPI',
+      'Django',
+      'Go',
+      'Node.js',
+      'REST APIs',
+      'Event-Driven Architecture',
+      'Async Processing',
+    ],
   },
   {
-    label: 'Data',
-    items: ['PostgreSQL', 'Redis', 'RabbitMQ', 'MongoDB'],
+    label: 'Data & Messaging',
+    items: [
+      'PostgreSQL',
+      'Redis',
+      'RabbitMQ',
+      'MongoDB',
+      'PGVector',
+      'S3',
+    ],
   },
   {
     label: 'Frontend',
-    items: ['React', 'TypeScript', 'Next.js'],
+    items: [
+      'React',
+      'React 19',
+      'TypeScript',
+      'Next.js',
+      'Tailwind CSS',
+      'Design Systems',
+    ],
   },
   {
-    label: 'Cloud & DevOps',
-    items: ['Docker', 'AWS', 'CI/CD', 'Nginx', 'Prometheus', 'Grafana'],
+    label: 'Cloud, Infrastructure & Observability',
+    items: [
+      'Docker',
+      'AWS',
+      'CI/CD',
+      'Nginx',
+      'Prometheus',
+      'Grafana',
+      'Cloudflare',
+    ],
   },
 ]
 
