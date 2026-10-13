@@ -3,9 +3,10 @@ import Tempus from '@studio-freight/tempus'
 import Lenis from 'lenis'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
-import roles from './constants/roles'
+import { useT } from './i18n'
 import Skills from './components/Skills'
 import WorkExperience from './components/WorkExperience'
+import LanguageSwitcher from './components/LanguageSwitcher'
 
 type Particle = {
   x: number
@@ -17,6 +18,8 @@ type Particle = {
 }
 
 function App() {
+  const t = useT()
+  const roles = t.hero.roles
   const [roleIndex, setRoleIndex] = useState(0)
   const [displayed, setDisplayed] = useState('')
   const [typing, setTyping] = useState(true)
@@ -113,6 +116,12 @@ function App() {
   }, [])
 
   useEffect(() => {
+    setRoleIndex(0)
+    setDisplayed('')
+    setTyping(true)
+  }, [roles])
+
+  useEffect(() => {
     const currentRole = roles[roleIndex]
     if (typing) {
       if (displayed.length < currentRole.length) {
@@ -135,7 +144,7 @@ function App() {
     return () => {
       if (typingTimeout.current) clearTimeout(typingTimeout.current)
     }
-  }, [displayed, typing, roleIndex])
+  }, [displayed, typing, roleIndex, roles])
 
   return (
     <div style={{ position: 'relative', minHeight: '100vh', overflow: 'hidden' }}>
@@ -143,6 +152,7 @@ function App() {
         ref={canvasRef}
         style={{ position: 'fixed', inset: 0, width: '100%', height: '100%', zIndex: 0, pointerEvents: 'none' }}
       />
+      <LanguageSwitcher />
       <div style={{ position: 'relative', zIndex: 1 }}>
         {/* Hero */}
         <div
@@ -162,11 +172,11 @@ function App() {
             <span className="typing-cursor">|</span>
           </div>
           <p className="hero-tagline">
-            Building AI platforms, distributed systems and cloud-native software.
+            {t.hero.tagline}
           </p>
-          <span className="hero-location">Palmas, TO</span>
+          <span className="hero-location">{t.hero.location}</span>
           <div className="scroll-indicator">
-            <span>scroll</span>
+            <span>{t.hero.scroll}</span>
             <span className="scroll-arrow">↓</span>
           </div>
         </div>

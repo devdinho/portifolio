@@ -1,4 +1,6 @@
 import { Mail, Phone } from 'lucide-react'
+import { useT } from '../i18n'
+import type { Dictionary } from '../i18n/en'
 
 const GithubIcon = ({ size = 15 }: { size?: number }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
@@ -12,35 +14,25 @@ const LinkedinIcon = ({ size = 15 }: { size?: number }) => (
   </svg>
 )
 
+type ExperienceId = keyof Dictionary['experiences']
+type ProjectId = keyof Dictionary['projects']
+
 interface Experience {
-  id: string
-  company: string
-  position: string
-  periodLabel: string
-  current: boolean
-  description: string
+  id: ExperienceId
+  start: string
+  end?: string
   technologies: string[]
-  achievements?: string[]
 }
 
 interface Project {
-  id: string
-  name: string
-  description: string
+  id: ProjectId
   technologies: string[]
 }
 
 const experiences: Experience[] = [
   {
     id: 'zuraio',
-    company: 'Zuraio',
-    position: 'Founding AI Platform Engineer',
-    periodLabel: '02/2026 – Present',
-    current: true,
-
-    description:
-      'First engineer responsible for architecting and building an enterprise multi-tenant AI platform from the ground up, spanning 15+ interoperable services, agent orchestration, enterprise integrations, shared frontend infrastructure and platform observability.',
-
+    start: '02/2026',
     technologies: [
       'Python',
       'FastAPI',
@@ -57,35 +49,10 @@ const experiences: Experience[] = [
       'Microsoft Graph',
       'Crawl4AI',
     ],
-
-    achievements: [
-      'Architected the core multi-tenant platform architecture across 15+ interoperable services, covering tenant isolation, authentication, AI orchestration, enterprise integrations and infrastructure',
-
-      'Built the Go-based authentication service using Fiber and Redis, achieving sub-5ms cache-hit response times and implementing DDoS protection layers, rate limiting and Prometheus metrics',
-
-      'Designed and implemented the multi-agent orchestration platform with 22 LLM roles, an ethics gate and three execution strategies (simple, complex and modular), alongside the shared zuraio-mcp-core SDK for MCP-based agents',
-
-      'Built an enterprise email agent integrating Microsoft 365 through Microsoft Graph, combining mailbox RAG, document processing for PDF/DOCX/XLSX attachments and asynchronous workers using arq and Redis',
-
-      'Designed the web intelligence and RAG ingestion pipeline using Crawl4AI for BFS deep crawling, SearXNG hybrid search and a Django-based control plane for collection and indexing',
-
-      'Designed the knowledge architecture supporting company-level and user-level knowledge, combining document ingestion, chunking, vector storage and retrieval for context-aware AI agents',
-
-      'Designed and maintained containerized deployment infrastructure across development, staging and production environments, integrating CI/CD, reverse proxies, service discovery and platform observability',
-
-      'Architected the shared @zuraio/ui design system with 47+ React 19 components, Storybook and GitHub Packages distribution, adopted across 4 frontends with internationalization in 4 languages',
-
-      'Implemented platform observability using Prometheus, Grafana, cAdvisor and node_exporter, including embedded infrastructure dashboards integrated into the platform frontends',
-    ],
   },
   {
     id: 'medflow',
-    company: 'Medflow Tech',
-    position: 'Senior Software Engineer',
-    periodLabel: '03/2026 – Present',
-    current: true,
-    description:
-      'Senior software engineering across healthcare products, spanning clinical protocol platforms, mental health care coordination, internal tooling and the data and BI layer.',
+    start: '03/2026',
     technologies: [
       'Python',
       'Django',
@@ -98,22 +65,11 @@ const experiences: Experience[] = [
       'AWS',
       'Terraform',
     ],
-    achievements: [
-      'Evolved the clinical protocol platform (Django and React), including protocol execution embedded in partner portals, referrals and medical guidance, and consumption of FHIR resources',
-      'Built the backend of a mental health care coordination system (Django 5.2, DRF/Ninja, Celery/RabbitMQ, WebSockets) with role-based access, audit logging, S3/Azure Blob attachments and PDF care plans',
-      'Migrated the protocol improvement hub from Supabase to a dedicated Django API on AWS (EC2, S3, Terraform, Bitbucket Pipelines), with a status state machine, a tested permission matrix and httpOnly cookie auth',
-      'Built Airflow pipelines ingesting a partner reporting API into Aurora PostgreSQL views, with SES freshness alerts',
-      'Migrated a Power BI dashboard to Apache Superset managed as code, with idempotent provisioning scripts',
-    ],
   },
   {
     id: 'sesau',
-    company: 'State Department of Health – Tocantins',
-    position: 'Software Engineer',
-    periodLabel: '07/2025 – 03/2026',
-    current: false,
-    description:
-      'Technical ownership of integration and strategic data platforms supporting the state public healthcare ecosystem.',
+    start: '07/2025',
+    end: '03/2026',
     technologies: [
       'Python',
       'FastAPI',
@@ -124,22 +80,11 @@ const experiences: Experience[] = [
       'Docker',
       'GitLab CI/CD',
     ],
-    achievements: [
-      'Technical owner of the integration bus for REDS (State Health Data Network)',
-      'Designed an event-driven distributed architecture using FastAPI and Go with asynchronous processing',
-      'Implemented data integration, security and governance mechanisms for a public healthcare environment',
-      'Led backend and frontend development of CIEGES, a strategic management portal for the state SUS ecosystem',
-      'Implemented automated testing and GitLab CI/CD pipelines for production delivery',
-    ],
   },
   {
     id: 'provafacil',
-    company: 'Prova Fácil – Conecta Ecosystem',
-    position: 'Junior Full Stack Developer',
-    periodLabel: '02/2025 – 07/2025',
-    current: false,
-    description:
-      'Full-stack development on the main product, a Django monolith, with serverless functions and asynchronous processing on AWS.',
+    start: '02/2025',
+    end: '07/2025',
     technologies: [
       'Python',
       'Django',
@@ -151,20 +96,11 @@ const experiences: Experience[] = [
       'Angular',
       'React',
     ],
-    achievements: [
-      'Took part in production incident war rooms on the main Django monolith, diagnosing and shipping fixes alongside the Tech Lead and often owning a workstream independently',
-      'Developed features in the Django monolith and serverless functions on AWS Lambda',
-      'Worked with asynchronous processing using RabbitMQ and Celery in Docker environments on AWS',
-    ],
   },
   {
     id: 'uft',
-    company: 'Federal University of Tocantins',
-    position: 'Software Engineer',
-    periodLabel: '03/2022 – 07/2025',
-    current: false,
-    description:
-      'Software engineering across institutional and government platforms, covering backend development, data modeling, requirements analysis and full-stack delivery.',
+    start: '03/2022',
+    end: '07/2025',
     technologies: [
       'Python',
       'Django',
@@ -175,21 +111,12 @@ const experiences: Experience[] = [
       'REST APIs',
       'SSE',
     ],
-    achievements: [
-      'Developed REST APIs and public-sector management systems used across institutional and government initiatives',
-      'Designed database models and backend services for government and agricultural technology solutions',
-      'Implemented real-time server-sent event (SSE) capabilities for interactive applications',
-      'Delivered full-stack features from requirements analysis through backend, database and frontend implementation',
-    ],
   },
 ]
 
 const projects: Project[] = [
   {
     id: 'noeris',
-    name: 'Noeris',
-    description:
-      'Conversational analytics platform combining LLMs, cognitive classification and automated insight generation over structured data and dashboards.',
     technologies: [
       'LLMs',
       'Python',
@@ -201,9 +128,6 @@ const projects: Project[] = [
   },
   {
     id: 'armoreddjango',
-    name: 'ArmoredDjango',
-    description:
-      'Production-ready Django foundation focused on security, API protection and operational reliability.',
     technologies: [
       'Django',
       'JWT',
@@ -216,9 +140,6 @@ const projects: Project[] = [
   },
   {
     id: 'plantagora',
-    name: 'PlantAgora',
-    description:
-      'Web and mobile platform for community garden management, combining geospatial features, REST APIs and cross-platform mobile development.',
     technologies: [
       'Django',
       'React Native',
@@ -230,9 +151,6 @@ const projects: Project[] = [
   },
   {
     id: 'iac',
-    name: 'Institute for Urban Care',
-    description:
-      'Public-sector applications spanning mobile and web platforms for institutional and municipal management.',
     technologies: [
       'Kotlin',
       'Spring Boot',
@@ -240,7 +158,7 @@ const projects: Project[] = [
       'React Native',
       'PostgreSQL',
     ],
-  }
+  },
 ]
 
 const c = {
@@ -257,6 +175,8 @@ const c = {
 }
 
 export default function WorkExperience() {
+  const t = useT()
+
   return (
     <>
       <section id="experience" style={{ padding: '0 0 80px', color: c.text }}>
@@ -294,14 +214,14 @@ export default function WorkExperience() {
               color: c.muted, border: `1px solid ${c.cardBorder}`, borderRadius: 6,
               padding: '3px 12px', backdropFilter: 'blur(4px)',
             }}>
-              2022 —{' '}<span style={{ color: c.accent }}>present</span>
+              2022 —{' '}<span style={{ color: c.accent }}>{t.presentShort}</span>
             </div>
           </div>
 
           {/* Section title */}
           <div style={{ textAlign: 'center', marginBottom: 56 }} data-aos="fade-up">
             <h2 style={{ fontSize: '1.1rem', fontWeight: 700, margin: '0 0 8px', letterSpacing: '0.06em' }}>
-              Experience
+              {t.sections.experience}
             </h2>
             <div style={{ width: 32, height: 2, background: c.accent, margin: '0 auto' }} />
           </div>
@@ -310,6 +230,8 @@ export default function WorkExperience() {
           <div>
             {experiences.map((exp, i) => {
               const isLast = i === experiences.length - 1
+              const text = t.experiences[exp.id]
+              const current = !exp.end
               return (
                 <div
                   key={exp.id}
@@ -323,11 +245,11 @@ export default function WorkExperience() {
                     alignItems: 'center', width: 28, flexShrink: 0,
                   }}>
                     <div
-                      className={exp.current ? 'dot-current' : undefined}
+                      className={current ? 'dot-current' : undefined}
                       style={{
                         width: 12, height: 12, borderRadius: '50%',
                         marginTop: 5, flexShrink: 0, position: 'relative', zIndex: 1,
-                        background: exp.current ? c.greenDot : c.accent,
+                        background: current ? c.greenDot : c.accent,
                       }}
                     />
                     {!isLast && (
@@ -350,37 +272,37 @@ export default function WorkExperience() {
                           gap: 10, flexWrap: 'wrap', marginBottom: 4,
                         }}>
                           <h3 style={{ fontWeight: 700, fontSize: '1rem', margin: 0 }}>
-                            {exp.position}
+                            {text.position}
                           </h3>
-                          {exp.current && (
+                          {current && (
                             <span style={{
                               fontSize: 11, fontWeight: 600, padding: '2px 8px',
                               borderRadius: 999, color: c.greenDot,
                               background: c.greenBadgeBg, border: `1px solid ${c.greenDot}`,
                             }}>
-                              Current
+                              {t.current}
                             </span>
                           )}
                         </div>
                         <div style={{ fontFamily: 'monospace', fontSize: 13, color: c.accent }}>
-                          {exp.company}
+                          {text.company}
                         </div>
                       </div>
                       <div style={{ fontFamily: 'monospace', fontSize: 12, color: c.muted }}>
-                        {exp.periodLabel}
+                        {exp.start} – {exp.end ?? t.present}
                       </div>
                     </div>
 
                     <p style={{ fontSize: 13, color: c.muted, lineHeight: 1.7, margin: '0 0 12px' }}>
-                      {exp.description}
+                      {text.description}
                     </p>
 
-                    {exp.achievements && (
+                    {text.achievements.length > 0 && (
                       <ul style={{
                         listStyle: 'none', padding: 0, margin: '0 0 12px',
                         display: 'flex', flexDirection: 'column', gap: 5,
                       }}>
-                        {exp.achievements.map((a, idx) => (
+                        {text.achievements.map((a, idx) => (
                           <li key={idx} style={{ fontSize: 13, color: c.muted, display: 'flex', gap: 8 }}>
                             <span style={{ color: c.accent, flexShrink: 0 }}>▸</span>
                             {a}
@@ -419,7 +341,7 @@ export default function WorkExperience() {
 
           <div style={{ textAlign: 'center', marginBottom: 48 }} data-aos="fade-up">
             <h2 style={{ fontSize: '1.1rem', fontWeight: 700, margin: '0 0 8px', letterSpacing: '0.06em' }}>
-              Featured Projects
+              {t.sections.projects}
             </h2>
             <div style={{ width: 32, height: 2, background: c.accent, margin: '0 auto' }} />
           </div>
@@ -436,9 +358,9 @@ export default function WorkExperience() {
                   padding: '20px 22px', display: 'flex', flexDirection: 'column', gap: 10,
                 }}
               >
-                <div style={{ fontWeight: 700, fontSize: '0.9rem', color: c.text }}>{project.name}</div>
+                <div style={{ fontWeight: 700, fontSize: '0.9rem', color: c.text }}>{t.projects[project.id].name}</div>
                 <p style={{ fontSize: 13, color: c.muted, lineHeight: 1.6, margin: 0, flex: 1 }}>
-                  {project.description}
+                  {t.projects[project.id].description}
                 </p>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: 5 }}>
                   {project.technologies.map((tech) => (

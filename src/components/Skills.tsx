@@ -1,6 +1,9 @@
-const skillCategories = [
+import { useT } from '../i18n'
+import type { Dictionary } from '../i18n/en'
+
+const skillCategories: { key: keyof Dictionary['skillCategories']; items: string[] }[] = [
   {
-    label: 'AI & Agent Systems',
+    key: 'ai',
     items: [
       'AI Agents',
       'Agent Orchestration',
@@ -13,7 +16,7 @@ const skillCategories = [
     ],
   },
   {
-    label: 'Backend & Distributed Systems',
+    key: 'backend',
     items: [
       'Python',
       'Django',
@@ -27,7 +30,7 @@ const skillCategories = [
     ],
   },
   {
-    label: 'Data & Messaging',
+    key: 'data',
     items: [
       'PostgreSQL',
       'Redis',
@@ -40,7 +43,7 @@ const skillCategories = [
     ],
   },
   {
-    label: 'Frontend',
+    key: 'frontend',
     items: [
       'React',
       'TypeScript',
@@ -51,7 +54,7 @@ const skillCategories = [
     ],
   },
   {
-    label: 'Cloud, Infrastructure & Observability',
+    key: 'infra',
     items: [
       'Docker',
       'AWS',
@@ -68,6 +71,7 @@ const skillCategories = [
 ]
 
 export default function Skills() {
+  const t = useT()
   const c = {
     text:       '#FFFFFF',
     accent:     '#4fc3f7',
@@ -83,7 +87,7 @@ export default function Skills() {
 
         <div style={{ textAlign: 'center', marginBottom: 48 }} data-aos="fade-up">
           <h2 style={{ fontSize: '1.1rem', fontWeight: 700, margin: '0 0 8px', letterSpacing: '0.06em' }}>
-            Skills
+            {t.sections.skills}
           </h2>
           <div style={{ width: 32, height: 2, background: c.accent, margin: '0 auto' }} />
         </div>
@@ -97,7 +101,7 @@ export default function Skills() {
         >
           {skillCategories.map((cat, i) => (
             <div
-              key={cat.label}
+              key={cat.key}
               data-aos="fade-up"
               data-aos-delay={String(i * 80)}
               style={{
@@ -119,7 +123,7 @@ export default function Skills() {
                   marginBottom: 12,
                 }}
               >
-                {cat.label}
+                {t.skillCategories[cat.key]}
               </div>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
                 {cat.items.map((item) => (
@@ -135,7 +139,7 @@ export default function Skills() {
                       color: c.text,
                     }}
                   >
-                    {item}
+                    {t.skillItems[item] ?? item}
                   </span>
                 ))}
               </div>
