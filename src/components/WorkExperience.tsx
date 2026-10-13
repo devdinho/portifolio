@@ -1,4 +1,4 @@
-import { Mail, Phone } from 'lucide-react'
+import { FileDown, Mail, Phone } from 'lucide-react'
 import { useT } from '../i18n'
 import type { Dictionary } from '../i18n/en'
 
@@ -190,10 +190,12 @@ export default function WorkExperience() {
                 { href: 'mailto:freitas.dev@proton.me', label: 'Email', icon: <Mail size={15} />, color: '#f59e0b' },
                 { href: 'https://github.com/devdinho', label: 'GitHub', icon: <GithubIcon size={15} />, color: c.text },
                 { href: 'https://www.linkedin.com/in/freitas-anderson', label: 'LinkedIn', icon: <LinkedinIcon size={15} />, color: '#4fc3f7' },
-              ].map(({ href, label, icon, color }) => (
+                { href: '/anderson-freitas-cv-pt-br.pdf', label: t.resume, icon: <FileDown size={15} />, color: '#c084fc', download: 'Anderson Freitas - Currículo.pdf' },
+              ].map(({ href, label, icon, color, download }) => (
                 <a
                   key={label}
                   href={href}
+                  download={download}
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{

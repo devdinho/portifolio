@@ -21,6 +21,7 @@ const en = {
   present: 'Present',
   presentShort: 'present',
   current: 'Current',
+  resume: 'Resume (PDF, PT)',
 
   skillCategories: {
     ai: 'AI & Agent Systems',

@@ -24,6 +24,7 @@ const ptBR: Dictionary = {
   present: 'Atual',
   presentShort: 'hoje',
   current: 'Atual',
+  resume: 'Currículo (PDF)',
 
   skillCategories: {
     ai: 'IA & Sistemas de Agentes',
