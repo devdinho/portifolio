@@ -6,9 +6,9 @@ const ptBR: Dictionary = {
 
   hero: {
     roles: [
-      'SENIOR SOFTWARE ENGINEER',
+      'HEAD OF ENGINEERING',
       'AI PLATFORM ENGINEER',
-      'FOUNDING ENGINEER',
+      'SENIOR SOFTWARE ENGINEER',
     ],
     tagline: 'Construindo plataformas de IA, sistemas distribuídos e software cloud-native.',
     location: 'Palmas, TO',
@@ -46,9 +46,9 @@ const ptBR: Dictionary = {
   experiences: {
     zuraio: {
       company: 'Zuraio',
-      position: 'Founding AI Platform Engineer',
+      position: 'Head of Engineering',
       description:
-        'Primeiro engenheiro responsável por arquitetar e construir do zero uma plataforma corporativa de IA multi-tenant, com mais de 15 serviços interoperáveis, orquestração de agentes, integrações corporativas, infraestrutura de frontend compartilhada e observabilidade.',
+        'Entrei como Founding AI Platform Engineer em 02/2026 e fui promovido a Head of Engineering em 10/2026. Primeiro engenheiro responsável por arquitetar e construir do zero uma plataforma corporativa de IA multi-tenant, com mais de 15 serviços interoperáveis, orquestração de agentes, integrações corporativas, infraestrutura de frontend compartilhada e observabilidade.',
       achievements: [
         'Arquitetei a base da plataforma multi-tenant com mais de 15 serviços interoperáveis, cobrindo isolamento por tenant, autenticação, orquestração de IA, integrações corporativas e infraestrutura',
         'Construí o serviço de autenticação em Go com Fiber e Redis, com respostas abaixo de 5 ms em cache hit, camadas de proteção contra DDoS, rate limiting e métricas Prometheus',

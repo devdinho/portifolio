@@ -3,9 +3,9 @@ const en = {
 
   hero: {
     roles: [
-      'SENIOR SOFTWARE ENGINEER',
+      'HEAD OF ENGINEERING',
       'AI PLATFORM ENGINEER',
-      'FOUNDING ENGINEER',
+      'SENIOR SOFTWARE ENGINEER',
     ],
     tagline: 'Building AI platforms, distributed systems and cloud-native software.',
     location: 'Palmas, TO',
@@ -43,9 +43,9 @@ const en = {
   experiences: {
     zuraio: {
       company: 'Zuraio',
-      position: 'Founding AI Platform Engineer',
+      position: 'Head of Engineering',
       description:
-        'First engineer responsible for architecting and building an enterprise multi-tenant AI platform from the ground up, spanning 15+ interoperable services, agent orchestration, enterprise integrations, shared frontend infrastructure and platform observability.',
+        'Joined as Founding AI Platform Engineer in 02/2026 and promoted to Head of Engineering in 10/2026. First engineer responsible for architecting and building an enterprise multi-tenant AI platform from the ground up, spanning 15+ interoperable services, agent orchestration, enterprise integrations, shared frontend infrastructure and platform observability.',
       achievements: [
         'Architected the core multi-tenant platform architecture across 15+ interoperable services, covering tenant isolation, authentication, AI orchestration, enterprise integrations and infrastructure',
         'Built the Go-based authentication service using Fiber and Redis, achieving sub-5ms cache-hit response times and implementing DDoS protection layers, rate limiting and Prometheus metrics',
