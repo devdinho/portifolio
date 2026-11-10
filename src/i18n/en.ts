@@ -21,7 +21,11 @@ const en = {
   present: 'Present',
   presentShort: 'present',
   current: 'Current',
-  resume: 'Resume (PDF, PT)',
+  resume: 'Resume (PDF)',
+  resumeFile: {
+    href: '/anderson-freitas-resume-en.pdf',
+    download: 'Anderson Freitas - Resume.pdf',
+  },
 
   skillCategories: {
     ai: 'AI & Agent Systems',

@@ -25,6 +25,10 @@ const ptBR: Dictionary = {
   presentShort: 'hoje',
   current: 'Atual',
   resume: 'Currículo (PDF)',
+  resumeFile: {
+    href: '/anderson-freitas-cv-pt-br.pdf',
+    download: 'Anderson Freitas - Currículo.pdf',
+  },
 
   skillCategories: {
     ai: 'IA & Sistemas de Agentes',

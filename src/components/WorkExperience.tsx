@@ -190,7 +190,7 @@ export default function WorkExperience() {
                 { href: 'mailto:freitas.dev@proton.me', label: 'Email', icon: <Mail size={15} />, color: '#f59e0b' },
                 { href: 'https://github.com/devdinho', label: 'GitHub', icon: <GithubIcon size={15} />, color: c.text },
                 { href: 'https://www.linkedin.com/in/freitas-anderson', label: 'LinkedIn', icon: <LinkedinIcon size={15} />, color: '#4fc3f7' },
-                { href: '/anderson-freitas-cv-pt-br.pdf', label: t.resume, icon: <FileDown size={15} />, color: '#c084fc', download: 'Anderson Freitas - Currículo.pdf' },
+                { href: t.resumeFile.href, label: t.resume, icon: <FileDown size={15} />, color: '#c084fc', download: t.resumeFile.download },
               ].map(({ href, label, icon, color, download }) => (
                 <a
                   key={label}
